@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		var box = document.getElementById("box");
+		document.onmousemove = function(e){
+			var e = e || window.event;
+			//用鼠标在可视区域的横坐标减去盒子的一半宽，得出盒子的横坐标位置
+			var x = e.clientX - box.offsetWidth/2;
+			//用鼠标在可视区域的纵坐标减去盒子的一半高，得出盒子的纵坐标位置
+			var y = e.clientY - box.offsetHeight/2;
+			box.style.left = x +"px";
+			box.style.top = y +"px";
+		}
+	</script>
+</body>
+</html>

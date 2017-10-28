@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 10px solid #000;
+			background-color: pink;
+			position: relative;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			border: 5px solid #000;
+			background-color: hotpink;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box2"></div>
+	</div>
+	<script>
+		var box = document.getElementById("box");
+		var box2 = box.children[0];
+		// console.log(box.offsetHeight); //220
+		// console.log(box.offsetWidth); //220
+		// console.log(box2.offsetHeight); //110
+		// console.log(box2.offsetWidth); ///110
+		// console.log(box.offsetLeft); //8
+		// console.log(box.offsetTop); //8
+		// console.log(box2.offsetLeft);  //28 父盒子是body
+		// console.log(box2.offsetTop); //28 父盒子是body
+		// console.log(box2.offsetLeft); //10 父盒子是定位后的box
+		// console.log(box2.offsetTop); //10 父盒子是定位后的box
+
+		//当前元素外的定位父盒子
+		console.log(box2.offsetParent); //<div id="box"></div>
+	</script>
+</body>
+</html>
